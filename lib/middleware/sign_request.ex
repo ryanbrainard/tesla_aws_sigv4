@@ -39,12 +39,12 @@ defmodule AwsSigV4.Middleware.SignRequest do
   defp sign_request(env, service, config) do
     {:ok, headers} =
       ExAws.Auth.headers(
-        env.method(),
-        env.url(),
+        env.method,
+        env.url,
         service,
         config,
-        env.headers(),
-        env.body() || ""
+        env.headers,
+        env.body || ""
       )
 
     %{env | headers: headers}
