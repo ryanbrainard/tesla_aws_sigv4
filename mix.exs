@@ -6,7 +6,7 @@ defmodule TeslaAwsSigV4.MixProject do
   def project do
     [
       app: :tesla_aws_sigv4,
-      version: "0.1.0",
+      version: "0.1.1",
       description: "Middleware to sign Tesla requests with AWS SigV4",
       source_url: @source_url,
       package: package(),
