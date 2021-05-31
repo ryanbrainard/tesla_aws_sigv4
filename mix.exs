@@ -1,12 +1,14 @@
 defmodule TeslaAwsSigV4.MixProject do
   use Mix.Project
 
+  @source_url "https://github.com/ryanbrainard/tesla_aws_sigv4"
+
   def project do
     [
       app: :tesla_aws_sigv4,
       version: "0.1.0",
       description: "Middleware to sign Tesla requests with AWS SigV4",
-      source_url: "https://github.com/ryanbrainard/tesla_aws_sigv4",
+      source_url: @source_url,
       package: package(),
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
@@ -30,7 +32,8 @@ defmodule TeslaAwsSigV4.MixProject do
 
   defp package do
     [
-      licenses: ["MIT"]
+      licenses: ["MIT"],
+      links: %{"GitHub" => @source_url}
     ]
   end
 end
