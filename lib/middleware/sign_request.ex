@@ -1,4 +1,4 @@
-defmodule Tesla.Middleware.AwsSigV4 do
+defmodule AwsSigV4.Middleware.SignRequest do
   @moduledoc """
   Signs Tesla requests with AWS SigV4
 
@@ -10,7 +10,7 @@ defmodule Tesla.Middleware.AwsSigV4 do
   defmodule MyClient do
     use Tesla
 
-    plug Tesla.Middleware.AwsSigV4, service: :ec2
+    plug AwsSigV4.Middleware.SignRequest, service: :ec2
   end
   ```
 

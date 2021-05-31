@@ -1,6 +1,6 @@
-defmodule Tesla.Middleware.AwsSigV4Test do
+defmodule AwsSigV4.Middleware.SignRequestTest do
   use ExUnit.Case
-  doctest Tesla.Middleware.AwsSigV4
+  doctest AwsSigV4.Middleware.SignRequest
   alias Tesla.Env
 
   @auth_regex ~r/AWS4-HMAC-SHA256 Credential=(?<access_key_id>\w+)\/(?<date>\d{8})\/(?<region>\w+)\/(?<service>\w+)\/aws4_request,SignedHeaders=host;x-amz-date,Signature=(?<signature>\w+)/
@@ -9,7 +9,7 @@ defmodule Tesla.Middleware.AwsSigV4Test do
     use Tesla
 
     plug(
-      Tesla.Middleware.AwsSigV4,
+      AwsSigV4.Middleware.SignRequest,
       service: :test_service,
       config: %{
         access_key_id: "test_access_key_id",
