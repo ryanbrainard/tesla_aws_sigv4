@@ -22,6 +22,7 @@ defmodule TeslaAwsSigV4.MixProject do
 
   defp deps do
     [
+      {:ex_doc, "~> 0.14", only: :dev, runtime: false},
       {:tesla, "~> 1.0"},
       {:ex_aws, "~> 2.1"},
 
@@ -33,7 +34,9 @@ defmodule TeslaAwsSigV4.MixProject do
   defp package do
     [
       licenses: ["MIT"],
-      links: %{"GitHub" => @source_url}
+      links: %{
+        "GitHub" => @source_url
+      }
     ]
   end
 end
