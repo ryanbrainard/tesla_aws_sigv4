@@ -5,6 +5,9 @@ defmodule TeslaAwsSigV4.MixProject do
     [
       app: :tesla_aws_sigv4,
       version: "0.1.0",
+      description: "Middleware to sign Tesla requests with AWS SigV4",
+      source_url: "https://github.com/ryanbrainard/tesla_aws_sigv4",
+      package: package(),
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       deps: deps()
@@ -12,9 +15,7 @@ defmodule TeslaAwsSigV4.MixProject do
   end
 
   def application do
-    [
-      extra_applications: [:logger]
-    ]
+    []
   end
 
   defp deps do
@@ -24,6 +25,12 @@ defmodule TeslaAwsSigV4.MixProject do
 
       # TODO: only needed by ex_aws, but we don't use it. how to avoid requiring this?
       {:hackney, "~> 1.0"}
+    ]
+  end
+
+  defp package do
+    [
+      licenses: ["MIT"]
     ]
   end
 end
