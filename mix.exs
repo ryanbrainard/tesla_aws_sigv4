@@ -27,7 +27,8 @@ defmodule TeslaAwsSigV4.MixProject do
       {:ex_aws, "~> 2.1"},
 
       # TODO: only needed by ex_aws, but we don't use it. how to avoid requiring this?
-      {:hackney, "~> 1.0"}
+      {:hackney, "~> 1.0"},
+      {:jason, "~> 1.2", only: [:test]}
     ]
   end
 

@@ -47,6 +47,6 @@ defmodule AwsSigV4.Middleware.SignRequest do
         env.body() || ""
       )
 
-    Tesla.put_headers(env, headers)
+    %{env | headers: headers}
   end
 end
